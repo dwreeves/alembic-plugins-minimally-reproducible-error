@@ -1,0 +1,15 @@
+[project]
+name = "actual-behavior-plugin"
+version = "0.0.0"
+
+# alembic/runtime/plugins.py does `for mod in entrypoint.load()`, so the value
+# has to resolve to an iterable of modules, not a module.
+[project.entry-points."alembic.plugins"]
+actual = "actual_behavior_plugin:modules"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["actual_behavior_plugin"]

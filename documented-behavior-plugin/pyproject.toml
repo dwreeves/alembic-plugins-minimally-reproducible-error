@@ -1,0 +1,15 @@
+[project]
+name = "documented-behavior-plugin"
+version = "0.0.0"
+
+# Per https://alembic.sqlalchemy.org/en/latest/api/plugins.html the value is
+# "the module containing the setup() function".
+[project.entry-points."alembic.plugins"]
+documented = "documented_behavior_plugin"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["documented_behavior_plugin"]
